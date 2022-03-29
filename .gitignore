@@ -1,0 +1,11 @@
+# git ignore
+#blog/secret.json
+#
+#blog/applications/users/migrations/*
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+venv/
