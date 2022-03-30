@@ -1,5 +1,5 @@
 # git ignore
-blog/secret.json
+#blog/secret.json
 blog/applications/users/migrations/*
 *.log
 *.pot
