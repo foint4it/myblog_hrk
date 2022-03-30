@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-with open("secret.json") as f:
+""" with open("secret.json") as f:
     secret = json.loads(f.read())
 
 def get_secret(secret_name, secrets=secret):
@@ -31,10 +31,15 @@ def get_secret(secret_name, secrets=secret):
     except:
         msg = "la variable %s no existe" % secret_name
         raise ImproperlyConfigured(msg)
+ """
 
 
+#SECRET_KEY = get_secret('SECRET_KEY')
+#SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = '^cv997**%ht!&!+qunlefo#2i&7#tfn-9#1d5_253hhi8516#f'
 
-SECRET_KEY = get_secret('SECRET_KEY')
+#EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+#EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -110,9 +115,9 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': get_secret('DB_NAME'),
-        'USER': get_secret('USER'),
-        'PASSWORD': get_secret('PASSWORD'),
+        'NAME': 'blogdb',
+        'USER': 'wf',
+        'PASSWORD': 'wfcursopro',
         'HOST': 'localhost',
         'PORT': '5432',
     }
@@ -156,6 +161,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
+
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR.child('static')]
